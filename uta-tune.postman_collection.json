@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "213beb53-9081-46cc-9b96-d2358d2f62ea",
+		"name": "uta-tune",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27619897",
+		"_collection_link": "https://cloudy-equinox-102171.postman.co/workspace/Team-Workspace~f2e6c22f-f8b0-4e25-893c-f246a1838b17/collection/27619897-213beb53-9081-46cc-9b96-d2358d2f62ea?action=share&source=collection_link&creator=27619897"
+	},
+	"item": [
+		{
+			"name": "checkCreditBalance",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailablePlans",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"header\": {\n    \"currency\": \"NPR\",\n    \"nationality\": \"NP\",\n    \"CultureCode\": \"en-US\",\n    \"adults\": 1,\n    \"children\": 0,\n    \"infants\": 0\n  },\n  \"flights\": {\n    \"originCountry\": \"NP\",\n    \"origin\": \"KTM\",\n    \"destinationCountry\": \"AU\",\n    \"destination\": \"SYD\",\n    \"airlineCode\": \"QF\",\n    \"departureTime\": \"2025-12-30T09:15:00\",\n    \"flightNumber\": \"QF68\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/insurance/plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"insurance",
+						"plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmPurchase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"Header\": {\n    \"PNR\": \"ABC123\",\n    \"PurchaseDate\": \"2025-12-29T09:00:00\",\n    \"SSRFeeCode\": \"INSB1_API_FDP_WW_60\",\n    \"Currency\": \"NPR\",\n    \"TotalPremium\": 7740.67,\n    \"CountryCode\": \"NP\",\n    \"TotalAdults\": 2,\n    \"TotalChild\": 0,\n    \"TotalInfants\": 0\n  },\n  \"ContactDetails\": {\n    \"ContactPerson\": \"Samrajya Rana\",\n    \"Address1\": \"Kathmandu\",\n    \"Address2\": \"\",\n    \"Address3\": \"\",\n    \"HomePhoneNum\": \"\",\n    \"MobilePhoneNum\": \"9812345678\",\n    \"OtherPhoneNum\": \"\",\n    \"PostCode\": \"44600\",\n    \"City\": \"Kathmandu\",\n    \"State\": \"Bagmati\",\n    \"Country\": \"NP\",\n    \"EmailAddress\": \"sam@example.com\"\n  },\n  \"Flights\": {\n    \"DepartCountryCode\": \"NP\",\n    \"DepartStationCode\": \"KTM\",\n    \"ArrivalCountryCode\": \"AU\",\n    \"ArrivalStationCode\": \"SYD\",\n    \"DepartAirlineCode\": \"QF\",\n    \"DepartDateTime\": \"2025-12-30T09:15:00\",\n    \"DepartFlightNo\": \"QF68\"\n  },\n  \"Passengers\": [\n    {\n      \"IsInfant\": \"false\",\n      \"FirstName\": \"Samrajya\",\n      \"LastName\": \"Rana\",\n      \"Gender\": 1,\n      \"DOB\": \"2000-01-01\",\n      \"Age\": \"25\",\n      \"IdentityType\": 1,\n      \"IdentityNo\": \"1234567890\",\n      \"IsQualified\": true,\n      \"Nationality\": \"NP\",\n      \"CountryOfResidence\": \"NP\",\n      \"SelectedPlanCode\": \"WW-API-FDP-OUTBOUND-60\",\n      \"SelectedSSRFeeCode\": \"INSB1_API_FDP_WW_60\",\n      \"CurrencyCode\": \"NPR\",\n      \"PassengerPremiumAmount\": 1634.37,\n      \"EmailAddress\": \"sam@example.com\",\n      \"PhoneNumber\": \"9812345678\",\n      \"Address\": \"Kathmandu\",\n      \"ExtraInfo\": [\n        {\n          \"ItemID\": 1,\n          \"ItemKeyName\": \"AE-API-TMB-OUTBOUND-PRO\",\n          \"ItemDesc\": \"INSB1_API_TMB_PR_OB\"\n        },\n        {\n          \"ItemID\": 2,\n          \"ItemKeyName\": \"WW-API-FDP-OUTBOUND-120\",\n          \"ItemDesc\": \"INSB1_API_FDP_WW_120\"\n        }\n      ]\n    },\n    {\n      \"IsInfant\": \"false\",\n      \"FirstName\": \"Aarav\",\n      \"LastName\": \"Shrestha\",\n      \"Gender\": 1,\n      \"DOB\": \"1995-05-05\",\n      \"Age\": \"30\",\n      \"IdentityType\": 1,\n      \"IdentityNo\": \"9876543210\",\n      \"IsQualified\": true,\n      \"Nationality\": \"NP\",\n      \"CountryOfResidence\": \"NP\",\n      \"SelectedPlanCode\": \"WW-B2B-AIRLEGIT-AIR TRAVELER ASSIST\",\n      \"SelectedSSRFeeCode\": \"INSB1_B2B_ALGT_ATA_OB\",\n      \"CurrencyCode\": \"NPR\",\n      \"PassengerPremiumAmount\": 6106.30,\n      \"EmailAddress\": \"aarav@example.com\",\n      \"PhoneNumber\": \"9811122233\",\n      \"Address\": \"Kathmandu\",\n      \"ExtraInfo\": [\n        {\n          \"ItemID\": 1,\n          \"ItemKeyName\": \"WW-B2B-AIRLEGIT-AUTOMATED CHECK IN\",\n          \"ItemDesc\": \"INSB1_B2B_ALGT_AC_OB\"\n        },\n        {\n          \"ItemID\": 2,\n          \"ItemKeyName\": \"WW-B2B-AIRLEGIT-FLIGHT WATCHER\",\n          \"ItemDesc\": \"INSB1_B2B_ALGT_FW_OB\"\n        }\n      ]\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/insurance/plans/confirm",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"insurance",
+						"plans",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
